@@ -1,0 +1,3 @@
+C:/Users/lanac/OneDrive/Desktop/3D-Renderer/build/CMakeFiles/3D-RENDERER.dir
+C:/Users/lanac/OneDrive/Desktop/3D-Renderer/build/CMakeFiles/edit_cache.dir
+C:/Users/lanac/OneDrive/Desktop/3D-Renderer/build/CMakeFiles/rebuild_cache.dir
