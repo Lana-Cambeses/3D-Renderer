@@ -44,6 +44,7 @@ int WINAPI WinMain(HINSTANCE hInstance, HINSTANCE hPrevInstance, LPSTR lpCmdLine
     }
 
     // 🔧 Create OpenGL Context
+    SDL_GL_SetAttribute(SDL_GL_DOUBLEBUFFER, 1);
     SDL_GLContext glContext = SDL_GL_CreateContext(window);
     if (!glContext) {
         std::cerr << "OpenGL Context Creation Failed!" << std::endl;
@@ -52,8 +53,12 @@ int WINAPI WinMain(HINSTANCE hInstance, HINSTANCE hPrevInstance, LPSTR lpCmdLine
         return -1;
     }
 
+    if (SDL_GL_SetSwapInterval(1) < 0) {
+    std::cerr << "Warning: Unable to enable VSync! SDL Error: " << SDL_GetError() << std::endl;
+    }
+
     // Enable VSync
-    SDL_GL_SetSwapInterval(1);
+    SDL_GL_SetSwapInterval(-1);
 
     // 🔹 Initialize GLEW
     glewExperimental = GL_TRUE;
@@ -122,24 +127,27 @@ int WINAPI WinMain(HINSTANCE hInstance, HINSTANCE hPrevInstance, LPSTR lpCmdLine
     glDeleteShader(fragmentShader);
 
     // 🟢 Render Loop
+    glEnable(GL_DEPTH_TEST);
     bool running = true;
     SDL_Event event;
     while (running) {
-        while (SDL_PollEvent(&event)) {
-            if (event.type == SDL_QUIT) {
-                running = false;
-            }
+    if (SDL_PollEvent(&event)) {
+        if (event.type == SDL_QUIT) {
+            running = false;
         }
-
-        glClearColor(0.2f, 0.3f, 0.3f, 1.0f);
-        glClear(GL_COLOR_BUFFER_BIT);
-
-        glUseProgram(shaderProgram);
-        glBindVertexArray(VAO);
-        glDrawArrays(GL_TRIANGLES, 0, 3);
-
-        SDL_GL_SwapWindow(window);
+    } else {
+        SDL_Delay(1);  // Prevents CPU from maxing out
     }
+
+    glClear(GL_COLOR_BUFFER_BIT | GL_DEPTH_BUFFER_BIT);
+    
+    glUseProgram(shaderProgram);
+    glBindVertexArray(VAO);
+    glDrawArrays(GL_TRIANGLES, 0, 3);
+    
+    SDL_GL_SwapWindow(window);
+    }
+
 
     // 🧹 Cleanup
     glDeleteVertexArrays(1, &VAO);
