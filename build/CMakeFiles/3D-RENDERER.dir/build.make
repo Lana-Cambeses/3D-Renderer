@@ -76,15 +76,15 @@ CMakeFiles/3D-RENDERER.dir/main.cpp.obj: CMakeFiles/3D-RENDERER.dir/includes_CXX
 CMakeFiles/3D-RENDERER.dir/main.cpp.obj: C:/Users/lanac/OneDrive/Desktop/3D-Renderer/main.cpp
 CMakeFiles/3D-RENDERER.dir/main.cpp.obj: CMakeFiles/3D-RENDERER.dir/compiler_depend.ts
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=C:\Users\lanac\OneDrive\Desktop\3D-Renderer\build\CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Building CXX object CMakeFiles/3D-RENDERER.dir/main.cpp.obj"
-	C:\msys64\ucrt64\bin\c++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/3D-RENDERER.dir/main.cpp.obj -MF CMakeFiles\3D-RENDERER.dir\main.cpp.obj.d -o CMakeFiles\3D-RENDERER.dir\main.cpp.obj -c C:\Users\lanac\OneDrive\Desktop\3D-Renderer\main.cpp
+	C:\msys64\ucrt64\bin\g++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/3D-RENDERER.dir/main.cpp.obj -MF CMakeFiles\3D-RENDERER.dir\main.cpp.obj.d -o CMakeFiles\3D-RENDERER.dir\main.cpp.obj -c C:\Users\lanac\OneDrive\Desktop\3D-Renderer\main.cpp
 
 CMakeFiles/3D-RENDERER.dir/main.cpp.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Preprocessing CXX source to CMakeFiles/3D-RENDERER.dir/main.cpp.i"
-	C:\msys64\ucrt64\bin\c++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E C:\Users\lanac\OneDrive\Desktop\3D-Renderer\main.cpp > CMakeFiles\3D-RENDERER.dir\main.cpp.i
+	C:\msys64\ucrt64\bin\g++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E C:\Users\lanac\OneDrive\Desktop\3D-Renderer\main.cpp > CMakeFiles\3D-RENDERER.dir\main.cpp.i
 
 CMakeFiles/3D-RENDERER.dir/main.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling CXX source to assembly CMakeFiles/3D-RENDERER.dir/main.cpp.s"
-	C:\msys64\ucrt64\bin\c++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S C:\Users\lanac\OneDrive\Desktop\3D-Renderer\main.cpp -o CMakeFiles\3D-RENDERER.dir\main.cpp.s
+	C:\msys64\ucrt64\bin\g++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S C:\Users\lanac\OneDrive\Desktop\3D-Renderer\main.cpp -o CMakeFiles\3D-RENDERER.dir\main.cpp.s
 
 # Object files for target 3D-RENDERER
 3D__RENDERER_OBJECTS = \
@@ -97,6 +97,7 @@ CMakeFiles/3D-RENDERER.dir/main.cpp.s: cmake_force
 3D-RENDERER.exe: CMakeFiles/3D-RENDERER.dir/build.make
 3D-RENDERER.exe: C:/msys64/ucrt64/lib/libSDL2.dll.a
 3D-RENDERER.exe: C:/msys64/ucrt64/lib/libglew32.dll.a
+3D-RENDERER.exe: C:/msys64/ucrt64/lib/libglfw3.dll.a
 3D-RENDERER.exe: CMakeFiles/3D-RENDERER.dir/linkLibs.rsp
 3D-RENDERER.exe: CMakeFiles/3D-RENDERER.dir/objects1.rsp
 3D-RENDERER.exe: CMakeFiles/3D-RENDERER.dir/link.txt
