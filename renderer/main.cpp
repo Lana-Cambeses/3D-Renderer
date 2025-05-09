@@ -8,7 +8,7 @@
     //Window dimensions
     const GLint WIDTH = 800, HEIGHT = 600;
 
-int main() {
+int WINAPI WinMain(HINSTANCE hInstance, HINSTANCE hPrevInstance, LPSTR lpCmdLine, int nShowCmd) {
     //Initialize GLFW
     if (!glfwInit()) {
         printf("GLFW initialization failed");
@@ -25,6 +25,7 @@ int main() {
     glfwWindowHint(GLFW_OPENGL_FORWARD_COMPAT, GL_TRUE);
 
     GLFWwindow *mainWindow = glfwCreateWindow(WIDTH, HEIGHT, "Test Window", NULL, NULL);
+
     if (!mainWindow) {
         printf("GLFW window creation failed!");
         glfwTerminate();

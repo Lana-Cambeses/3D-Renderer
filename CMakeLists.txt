@@ -10,15 +10,14 @@ find_package(GLEW REQUIRED)
 find_package(OpenGL REQUIRED)
 find_package(glfw3 REQUIRED)
 
-# Force console mode (fix WinMain issue)
-set(CMAKE_EXE_LINKER_FLAGS "${CMAKE_EXE_LINKER_FLAGS} -mconsole")
-set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} -mconsole")
+# Always use the Windows subsystem and force the entry point to mainCRTStartup
+set(CMAKE_EXE_LINKER_FLAGS "${CMAKE_EXE_LINKER_FLAGS} -Wl,--subsystem,windows -Wl,--entry,mainCRTStartup")
 
 # Include directories
 include_directories(${SDL2_INCLUDE_DIRS} ${GLEW_INCLUDE_DIRS} ${OPENGL_INCLUDE_DIRS})
 
 # Source files
-add_executable(3D-RENDERER main.cpp)
+add_executable(3D-RENDERER renderer/main.cpp)
 
 # Link libraries
 target_link_libraries(3D-RENDERER 
@@ -29,6 +28,4 @@ target_link_libraries(3D-RENDERER
     glfw
     -static-libgcc
     -static-libstdc++
-    -static
-    -Wl,-e,mainCRTStartup
 )

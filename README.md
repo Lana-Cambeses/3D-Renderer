@@ -5,31 +5,20 @@ Interactive 3D Scene Renderer
 🌟 Features
 
 ✅ Load and render .obj 3D models
-
 ✅ Camera controls (Orbit, Zoom, FPS-style movement)
-
 ✅ Real-time lighting (Phong Shading, Ambient Light, etc.)
-
 ✅ User interaction (Click and manipulate objects)
-
 ✅ Basic physics (Collisions, Gravity, etc.)
-
 ✅ Custom shaders (Vertex & Fragment Shaders for effects)
 
 🛠️ Technologies & Libraries
 
 C++ – Core programming language
-
 OpenGL – Rendering API
-
 SDL2 – Window creation & input handling
-
 GLM – 3D math library (vectors, matrices, transformations)
-
 Assimp – Model loading library (.obj files)
-
 GLEW/GLAD – OpenGL extension loading
-
 ImGui – GUI for debugging & scene controls
 
 📦 Installation
@@ -39,19 +28,16 @@ Prerequisites
 Make sure you have the following installed:
 
 GCC 14.2.0 (via MSYS2)
-
 SDL2 (mingw-w64-ucrt-x86_64-SDL2)
-
 CMake (mingw-w64-ucrt-x86_64-cmake)
-
 GLEW/GLAD, GLM, Assimp, and ImGui (Install via CMake or package manager)
 
-Cloning the Repository
+Cloning the Repository:
 
 git clone https://github.com/Lana-Cambeses/3D-Renderer.git
 cd Interactive3DRenderer
 
-Building the Project
+Building the Project:
 
 mkdir build && cd build
 cmake ..
