@@ -8,16 +8,24 @@ set(CMAKE_CXX_STANDARD_REQUIRED True)
 find_package(SDL2 REQUIRED)
 find_package(GLEW REQUIRED)
 find_package(OpenGL REQUIRED)
+find_package(glfw3 REQUIRED)
+
+# Always use the Windows subsystem and force the entry point to mainCRTStartup
+set(CMAKE_EXE_LINKER_FLAGS "${CMAKE_EXE_LINKER_FLAGS} -Wl,--subsystem,windows -Wl,--entry,mainCRTStartup")
 
 # Include directories
 include_directories(${SDL2_INCLUDE_DIRS} ${GLEW_INCLUDE_DIRS} ${OPENGL_INCLUDE_DIRS})
 
 # Source files
-add_executable(3D-RENDERER main.cpp)
+add_executable(3D-RENDERER renderer/main.cpp)
 
 # Link libraries
 target_link_libraries(3D-RENDERER 
+    mingw32
     SDL2::SDL2 
     GLEW::GLEW 
     OpenGL::GL
+    glfw
+    -static-libgcc
+    -static-libstdc++
 )
