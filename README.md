@@ -60,5 +60,3 @@ MIT License
 Pull requests, issues, and forks are welcome!
 
 🎨 Developed by Lana T. C. Garcia
-
-🧪 Test commit for verifying GitHub contribution tracking
