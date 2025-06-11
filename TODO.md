@@ -11,6 +11,11 @@ This file tracks my progress across:
 - [ ] Functions and headers
         - 1 VIDEO
         - 1 VIDEO
+        - 1 VIDEO
+        - 1 VIDEO
+        - 1 VIDEO
+        - 1 VIDEO
+        - 1 VIDEO
 - [ ] Classes and objects
 - [ ] Pointers and memory
 - [ ] References, const, and value types
