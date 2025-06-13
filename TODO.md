@@ -11,12 +11,13 @@ This file tracks my progress across:
 - [X] Functions and headers
 - [ ] Classes and objects
 - [X] Pointers and memory
-- [ ] References, const, and value types
+- [X] References, const, and value types
 - [ ] Data structures (vectors, maps)
 - [ ] File organization
 - [ ] Build systems (make/CMake basics)
 
 Track:
+        - 1 VIDEO
         - 1 VIDEO
         - 1 VIDEO
         - 1 VIDEO

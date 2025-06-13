@@ -21,5 +21,14 @@ int main() {
     
     delete[] buffer; 
 
+    //REFERENCES
+    int a = 5;
+    int& ref = a; //This only exists only in our source code; if we compile it, there wont be a ref, only a
+    ref = 2; //This sets a to 2 haha
+
+    //void Increment(int& value) {
+    //    value++
+    //} This function takes a reference and increments the value passed by it whoaaa
+
     std::cin.get();
 }
