@@ -9,7 +9,7 @@ This file tracks my progress across:
 
 ## 🧱 Phase 1: Core C++ (Cherno – `learning.cpp`)
 - [X] Functions and headers
-- [ ] Classes and objects
+- [x] Classes and objects
 - [X] Pointers and memory
 - [X] References, const, and value types
 - [ ] Data structures (vectors, maps)
@@ -30,6 +30,10 @@ Track:
         - 1 VIDEO
         - 1 VIDEO
         - 1 VIDEO
+        - 1 VIDEO
+        - 1 VIDEO
+        - 1 VIDEO
+        - 1 video
 
 ---
 

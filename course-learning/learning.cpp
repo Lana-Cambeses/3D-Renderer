@@ -1,12 +1,40 @@
 #include <iostream>
 #include <cstring>
 
-void Log(const char* message) {
-    std::cout << message << std::endl;
-}
+//void Log(const char* message) {
+//    std::cout << message << std::endl;
+//}
+
+class Log {
+    public:
+        const int LogLevelError = 0;
+        const int LogLevelWarning = 1;
+        const int LogLevelInfo = 2;
+    private: 
+        int m_LogLevel = LogLevelInfo; //m underscore is a convention for a class member variable, aka private
+    public:
+        void SetLevel(int level) {
+            m_LogLevel = level;
+        }
+
+        void Error(const char* message) {
+            if (m_LogLevel >= LogLevelError)
+                std::cout << "[ERROR]:" << message << std::endl;
+        }
+
+        void Warn(const char* message) {
+            if (m_LogLevel >= LogLevelWarning)
+                std::cout << "[WARNING]:" << message << std::endl;
+        }
+
+        void Info(const char* message) {
+            if (m_LogLevel >= LogLevelInfo)
+                std::cout << "[INFO]:" << message << std::endl;
+        }
+};
 
 int main() {
-    Log("Hello World");
+    //Log("Hello World");
 
     //POINTERS
     int var = 8;
@@ -17,7 +45,7 @@ int main() {
     char* buffer = new char[8]; //Im asking the computer to alocate eight bytes of memory for this pointer (char is one, rt?)
     memset(buffer, 0, 8); //This function takes the pointer as a parameter, what are we filling the memory with as the second, and how much as the third, and sets the memory address with that info
     
-    char** ptr = &buffer;
+    char** ptr2 = &buffer;
     
     delete[] buffer; 
 
@@ -30,5 +58,13 @@ int main() {
     //    value++
     //} This function takes a reference and increments the value passed by it whoaaa
 
+    //Log class usage:
+    Log log;
+    log.SetLevel(log.LogLevelError);
+    log.Warn("Hello!");
+    log.Error("Hello!");
+    log.Info("Hello!");
+
     std::cin.get();
 }
+
