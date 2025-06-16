@@ -33,7 +33,8 @@ Track:
         - 1 VIDEO
         - 1 VIDEO
         - 1 VIDEO
-        - 1 video
+        - 1 VIDEO
+        - 1 VIDEO
 
 ---
 
