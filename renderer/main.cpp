@@ -20,8 +20,9 @@ int WINAPI WinMain(HINSTANCE hInstance, HINSTANCE hPrevInstance, LPSTR lpCmdLine
     //OpenGL version
     glfwWindowHint(GLFW_CONTEXT_VERSION_MAJOR, 3);
     glfwWindowHint(GLFW_CONTEXT_VERSION_MINOR, 3);
-    //Core profire = No Backwards Compatiibility
+    //Core profile = No Backwards Compatibility
     glfwWindowHint(GLFW_OPENGL_PROFILE, GLFW_OPENGL_CORE_PROFILE);
+    //Allow forward compatibility
     glfwWindowHint(GLFW_OPENGL_FORWARD_COMPAT, GL_TRUE);
 
     GLFWwindow *mainWindow = glfwCreateWindow(WIDTH, HEIGHT, "Test Window", NULL, NULL);
@@ -49,12 +50,13 @@ int WINAPI WinMain(HINSTANCE hInstance, HINSTANCE hPrevInstance, LPSTR lpCmdLine
         return 1;
     }
 
-    glViewport(0, 0, bufferWidth, bufferHeight);
+    //Setup Viewport size
+    glViewport(0, 0, bufferWidth, bufferHeight); //openGL already, sets the size of the drawing in the window
 
     //Loop until window closed
     while(!glfwWindowShouldClose(mainWindow)) {
 
-        //Get + Handle user input events
+        //Get + Handle user input events (with window too)
         glfwPollEvents();
 
         //Clear window

@@ -51,11 +51,11 @@ Track:
 ---
 
 ## 🔺 Phase 2: OpenGL Concepts (Udemy – `course-opengl/`)
-- [ ] GLFW window setup
+- [X] GLFW window setup
 - [ ] GLEW initialization
 - [ ] Drawing a triangle
 - [ ] Shaders: Vertex and Fragment
-- [ ] VBOs, VAOs, EBOs
+- [ ] VBOs, VAOs, EBOs //Vertex Buffer Objects (defines the actual values) and Vertex Array Objects (defines the parameters)
 - [ ] Model loading with Assimp
 - [ ] Camera system
 - [ ] Lighting (Phong shading, etc.)
@@ -65,7 +65,9 @@ Track:
 Section 1:
   - 1 VIDEO
   - 1 VIDEO
+  - 1 VIDEO
 Section 2:
+  - 
 Section 3:
 Section 4:
 Section 5:
@@ -93,3 +95,4 @@ Section 6:
 - [ ] Update `README.md`
 - [ ] Add a dev log (e.g. `log-2025-06-07.md`)
 
+cd:cd /c/Users/lanac/OneDrive/Desktop/3D-Renderer
