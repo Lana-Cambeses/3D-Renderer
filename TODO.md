@@ -71,6 +71,8 @@ Section 2:
   - 1 VIDEO
   - 1 VIDEO
   - 1 VIDEO
+  - 1 VIDEO
+  + fix
 Section 3:
 Section 4:
 Section 5:
