@@ -23,6 +23,11 @@ float triIncrement = 0.0005f;
 
 float curAngle = 0.0f;
 
+bool sizeDirection = true;
+float curSize = 0.4f;
+float maxSize = 0.8f;
+float minSize = 0.1f;
+
 //Vertex Shader
 static const char* vShader = "                  \n\
 #version 330                                     \n\
@@ -32,7 +37,7 @@ layout (location = 0) in vec3 pos;              \n\
 uniform mat4 model;                             \n\
                                                 \n\
 void main(){                                     \n\
-    gl_Position = model * vec4(0.4 * pos.x, 0.4 * pos.y, pos.z, 1.0);    \n\
+    gl_Position = model * vec4(pos, 1.0);    \n\
 }";
 
 //Fragment Shader
@@ -197,6 +202,16 @@ int WINAPI WinMain(HINSTANCE hInstance, HINSTANCE hPrevInstance, LPSTR lpCmdLine
             curAngle -= 360;
         }
 
+        if(direction){
+            curSize += 0.0001f;
+        } else {
+            curSize -= 0.0001f;
+        }
+
+        if(curSize >= maxSize || curSize <= minSize) {
+            sizeDirection = !sizeDirection;
+        }
+
         //Clear window
         glClearColor(0.0f, 0.0f, 0.0f, 1.0f);
         glClear(GL_COLOR_BUFFER_BIT);
@@ -204,8 +219,10 @@ int WINAPI WinMain(HINSTANCE hInstance, HINSTANCE hPrevInstance, LPSTR lpCmdLine
         glUseProgram(shader);
 
         glm::mat4 model = glm::mat4(1.0f); // glm::mat4 model; //Empty matrix, made of zeroes
+
         model = glm::translate(model, glm::vec3(triOffset, 0.0f, 0.0f));
         model = glm::rotate(model, curAngle * toRadians, glm::vec3(0.0f, 0.0f, 1.0f));
+        model = glm::scale(model, glm::vec3(curSize, curSize, 1.0f)); //good to be last so it wont scale the translations and rotations as well
 
         glUniformMatrix4fv(uniformModel, 1, GL_FALSE, glm::value_ptr(model));
 
