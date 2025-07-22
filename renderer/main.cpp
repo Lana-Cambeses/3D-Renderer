@@ -49,10 +49,10 @@ static const char* fShader = "                  \n\
                                                 \n\
 in vec4 vCol;                                    \n\
                                                 \n\
-out vec4 colour;              \n\
+out vec4 colour;                                  \n\
                                                 \n\
 void main(){                                     \n\
-    colour = vec4(1.0, 0.0, 0.0, 1.0);    \n\
+    colour = vCol;    \n\
 }";
 
 void CreateTriangle() {
