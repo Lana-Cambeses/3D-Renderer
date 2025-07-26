@@ -17,7 +17,11 @@ set(CMAKE_EXE_LINKER_FLAGS "${CMAKE_EXE_LINKER_FLAGS} -Wl,--subsystem,windows -W
 include_directories(${SDL2_INCLUDE_DIRS} ${GLEW_INCLUDE_DIRS} ${OPENGL_INCLUDE_DIRS})
 
 # Source files
-add_executable(3D-RENDERER renderer/main.cpp)
+add_executable(3D-RENDERER 
+    renderer/main.cpp 
+    renderer/Mesh.cpp
+    renderer/shaders/Shader.cpp
+)
 
 # Link libraries
 target_link_libraries(3D-RENDERER 
