@@ -12,6 +12,7 @@
 #include <glm/gtc/matrix_transform.hpp>
 #include <glm/gtc/type_ptr.hpp>
 
+#include "Window.h"
 #include "Mesh.h"
 #include "shaders/Shader.h"
 
@@ -20,6 +21,7 @@
 const GLint WIDTH = 800, HEIGHT = 600;
 const float toRadians = 3.14159265f / 180.0f;
 
+Window mainWindow;
 std::vector<Mesh*> meshList; //Like an arraylist of Mesh pointers
 std::vector<Shader> shaderList; 
 
@@ -36,17 +38,17 @@ float maxSize = 0.8f;
 float minSize = 0.1f;
 
 //Vertex Shader
-static const char* vShader = "shaders/shader.vert";
+static const char* vShader = "renderer/shaders/shader.vert";
 
 //Fragment Shader
-static const char* fShader = "shaders/shader.frag";
+static const char* fShader = "renderer/shaders/shader.frag";
 
 void CreateObjects() {
 
     unsigned int indices[] = {
         0, 3, 1,
         1, 3, 2,
-        2, 3, 3,
+        2, 3, 0,
         0, 1, 2
     };
 
@@ -74,60 +76,18 @@ void CreateShaders() {
 }
 
 int WINAPI WinMain(HINSTANCE hInstance, HINSTANCE hPrevInstance, LPSTR lpCmdLine, int nShowCmd) {
-    //Initialize GLFW
-    if (!glfwInit()) {
-        printf("GLFW initialization failed");
-        glfwTerminate();
-        return 1;
-    }
 
-    //Setup GLFW window properties
-    //OpenGL version
-    glfwWindowHint(GLFW_CONTEXT_VERSION_MAJOR, 3);
-    glfwWindowHint(GLFW_CONTEXT_VERSION_MINOR, 3);
-    //Core profile = No Backwards Compatibility
-    glfwWindowHint(GLFW_OPENGL_PROFILE, GLFW_OPENGL_CORE_PROFILE);
-    //Allow forward compatibility
-    glfwWindowHint(GLFW_OPENGL_FORWARD_COMPAT, GL_TRUE);
-
-    GLFWwindow *mainWindow = glfwCreateWindow(WIDTH, HEIGHT, "Test Window", NULL, NULL);
-
-    if (!mainWindow) {
-        printf("GLFW window creation failed!");
-        glfwTerminate();
-        return 1;
-    }
-
-    //Get buffer size information
-    int bufferWidth, bufferHeight;
-    glfwGetFramebufferSize(mainWindow, &bufferWidth, &bufferHeight);
-
-    //Set context for GLEW to use
-    glfwMakeContextCurrent(mainWindow);
-
-    //Allow modern extension features
-    glewExperimental = GL_TRUE;
-
-    if (glewInit() != GLEW_OK) {
-        printf("GLEW initialisation failed");
-        glfwDestroyWindow(mainWindow);
-        glfwTerminate();
-        return 1;
-    }
-
-    glEnable(GL_DEPTH_TEST);
-
-    //Create Viewport/Setup Viewport size
-    glViewport(0, 0, bufferWidth, bufferHeight); //openGL already, sets the size of the drawing in the window
+    mainWindow = Window(800, 600);
+    mainWindow.Initialise();
 
     CreateObjects();
     CreateShaders();
 
     GLuint uniformProjection = 0, uniformModel = 0;
-    glm::mat4 projection = glm::perspective(45.0f, (GLfloat)bufferWidth / (GLfloat)bufferHeight, 0.1f, 100.0f);
+    glm::mat4 projection = glm::perspective(45.0f, mainWindow.getBufferWidth() / mainWindow.getBufferHeight(), 0.1f, 100.0f);
 
     //Loop until window closed
-    while(!glfwWindowShouldClose(mainWindow)) {
+    while(!mainWindow.getShouldClose()) {
 
         //Get + Handle user input events (with window too)
         glfwPollEvents();
@@ -182,7 +142,7 @@ int WINAPI WinMain(HINSTANCE hInstance, HINSTANCE hPrevInstance, LPSTR lpCmdLine
 
         glUseProgram(0);
 
-        glfwSwapBuffers(mainWindow);
+        mainWindow.swapBuffers();
 
     }
 
