@@ -21,6 +21,7 @@ add_executable(3D-RENDERER
     renderer/main.cpp 
     renderer/Mesh.cpp
     renderer/shaders/Shader.cpp
+    renderer/Window.cpp
 )
 
 # Link libraries
