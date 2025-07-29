@@ -12,9 +12,7 @@ This file tracks my progress across:
 - [x] Classes and objects
 - [X] Pointers and memory
 - [X] References, const, and value types
-- [ ] Data structures (vectors, maps)
-- [ ] File organization
-- [ ] Build systems (make/CMake basics)
+- [X] Data structures (vectors, maps)
 
 Track:
 - 1 VIDEO
@@ -52,10 +50,10 @@ Track:
 
 ## 🔺 Phase 2: OpenGL Concepts (Udemy – `course-opengl/`)
 - [X] GLFW window setup
-- [ ] GLEW initialization
-- [ ] Drawing a triangle
-- [ ] Shaders: Vertex and Fragment
-- [ ] VBOs, VAOs, EBOs //Vertex Buffer Objects (defines the actual values) and Vertex Array Objects (defines the parameters)
+- [X] GLEW initialization
+- [X] Drawing a triangle
+- [X] Shaders: Vertex and Fragment
+- [X] VBOs, VAOs, EBOs //Vertex Buffer Objects (defines the actual values) and Vertex Array Objects (defines the parameters)
 - [ ] Model loading with Assimp
 - [ ] Camera system
 - [ ] Lighting (Phong shading, etc.)
@@ -83,6 +81,7 @@ Section 2:
   - 1 VIDEO
   - 1 VIDEO (Clean up)
 Section 3:
+  - 1 VIDEO
 Section 4:
 Section 5:
 Section 6:
@@ -101,12 +100,12 @@ Section 6:
 ---
 
 ## ✅ Easy Daily Commit Ideas
-- [ ] Add a note or idea to this file
-- [ ] Check off a box you completed
-- [ ] Rename/refactor a function
-- [ ] Add comments to explain a block
-- [ ] Write a small helper function
-- [ ] Update `README.md`
-- [ ] Add a dev log (e.g. `log-2025-06-07.md`)
+- [X] Add a note or idea to this file
+- [X] Check off a box you completed
+- [X] Rename/refactor a function
+- [X] Add comments to explain a block
+- [X] Write a small helper function
+- [X] Update `README.md`
+- [X] Add a dev log (e.g. `log-2025-06-07.md`)
 
 cd:cd /c/Users/lanac/OneDrive/Desktop/3D-Renderer

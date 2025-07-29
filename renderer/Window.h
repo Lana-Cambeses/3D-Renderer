@@ -28,4 +28,8 @@ private:
     GLint width, height;
     GLint bufferWidth, bufferHeight;
 
+    bool keys[1024]; //1024 for ASCII chars
+
+    static void handleKeys(GLFWwindow* window, int key, int code, int action, int mode);
+
 };
