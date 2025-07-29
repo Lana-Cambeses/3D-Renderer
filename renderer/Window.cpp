@@ -3,12 +3,20 @@
 Window::Window() {
     width = 800;
     height = 600;
+
+    for(size_t i = 0; i< 1024; i++) {
+        keys[i] = 0;
+    }
 }
 
 Window::Window(GLint windowWidth, GLint windowHeight) {
 
     width = windowWidth;
     height = windowHeight;
+
+    for(size_t i = 0; i< 1024; i++) {
+        keys[i] = 0;
+    }
 }
 
 int Window::Initialise() {
@@ -57,7 +65,19 @@ int Window::Initialise() {
     //Create Viewport/Setup Viewport size
     glViewport(0, 0, bufferWidth, bufferHeight); //openGL already, sets the size of the drawing in the window
 
+    glfwSetWindowUserPointer(mainWindow, this);
+
     return 0;
+}
+
+void handleKeys(GLFWwindow* window, int key, int code, int action, int mode) {
+
+    Window* theWindow = static_cast<Window*>(glfwGetWindowUserPointer(window));
+
+    if(key == GLFW_KEY_ESCAPE && action == GLFW_PRESS) {
+        glfwSetWindowShouldClose(window, GL_TRUE);
+    }
+    
 }
 
 Window::~Window() {
