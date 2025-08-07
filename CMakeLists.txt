@@ -22,6 +22,7 @@ add_executable(3D-RENDERER
     renderer/Mesh.cpp
     renderer/shaders/Shader.cpp
     renderer/Window.cpp
+    renderer/Camera.cpp
 )
 
 # Link libraries
