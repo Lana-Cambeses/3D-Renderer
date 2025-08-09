@@ -24,6 +24,9 @@ std::vector<Mesh*> meshList; //Like an arraylist of Mesh pointers
 std::vector<Shader> shaderList; 
 Camera camera;
 
+GLfloat deltaTime = 0.0f;
+GLfloat lastTime = 0.0f;
+
 //Vertex Shader
 static const char* vShader = "renderer/shaders/shader.vert";
 
@@ -70,19 +73,23 @@ int WINAPI WinMain(HINSTANCE hInstance, HINSTANCE hPrevInstance, LPSTR lpCmdLine
     CreateObjects();
     CreateShaders();
 
-    camera = Camera(glm::vec3(0.0f, 0.0f, 0.0f), glm::vec3(0.0f, 1.0f, 0.0f), -90.0f, 0.0f, 0.01f, 1.0f);
+    camera = Camera(glm::vec3(0.0f, 0.0f, 0.0f), glm::vec3(0.0f, 1.0f, 0.0f), -90.0f, 0.0f, 5.0f, 0.5f);
 
     GLuint uniformProjection = 0, uniformModel = 0, uniformView = 0;
-    glm::mat4 projection = glm::perspective(45.0f, mainWindow.getBufferWidth() / mainWindow.getBufferHeight(), 0.1f, 100.0f);
+    glm::mat4 projection = glm::perspective(glm::radians(45.0f), (GLfloat)mainWindow.getBufferWidth() / mainWindow.getBufferHeight(), 0.1f, 100.0f);
 
     //Loop until window closed
     while(!mainWindow.getShouldClose()) {
 
+        GLfloat now = glfwGetTime(); //SDL_GetPerofrmanceCounter();
+        deltaTime = now - lastTime; // (now - lastTime) * 1000 / SDL_GetPerformanceFrequency();
+        lastTime = now;
+
         //Get + Handle user input events (with window too)
         glfwPollEvents();
 
-        camera.keyControl(mainWindow.getKeys());
-
+        camera.keyControl(mainWindow.getKeys(), deltaTime);
+        camera.mouseControl(mainWindow.getXChange(), mainWindow.getYChange());
         //Clear window
         glClearColor(0.0f, 0.0f, 0.0f, 1.0f);
         glClear(GL_COLOR_BUFFER_BIT | GL_DEPTH_BUFFER_BIT);
