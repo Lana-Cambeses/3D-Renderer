@@ -72,7 +72,7 @@ void Shader::CompileShader(const char* vertexCode, const char* fragmentCode){
 
     uniformModel = glGetUniformLocation(shaderID, "model");
     uniformProjection = glGetUniformLocation(shaderID, "projection");
-    uniformProjection = glGetUniformLocation(shaderID, "view"); //These are the variables declared in the shader to connect
+    uniformView = glGetUniformLocation(shaderID, "view"); //These are the variables declared in the shader to connect
 }
 
 GLuint Shader::GetProjectionLocation(){
