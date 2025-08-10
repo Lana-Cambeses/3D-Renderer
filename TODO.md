@@ -55,7 +55,7 @@ Track:
 - [X] Shaders: Vertex and Fragment
 - [X] VBOs, VAOs, EBOs //Vertex Buffer Objects (defines the actual values) and Vertex Array Objects (defines the parameters)
 - [ ] Model loading with Assimp
-- [ ] Camera system
+- [X] Camera system
 - [ ] Lighting (Phong shading, etc.)
 
 ![alt text](image.png) //temp
@@ -85,13 +85,16 @@ Section 3:
   - 1 VIDEO
   + fix
   + research
+  - 1 VIDEO
 Section 4:
+  - 1 VIDEO
+  - 
 Section 5:
 Section 6:
 
 ---
 
-## 🌀 Phase 3: My SDL2 Engine (in `renderer/`)
+## 🌀 Phase 3: My SDL2 Engine
 - [ ] SDL2 window and OpenGL context
 - [ ] Input handling (keyboard + mouse)
 - [ ] Triangle rendering
