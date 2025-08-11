@@ -50,7 +50,7 @@ void Camera::mouseControl(GLfloat xChange, GLfloat yChange) {
         pitch = 89.0f;
     }
 
-    if (pitch > -89.0f) {
+    if (pitch < -89.0f) {
         pitch = -89.0f;
     }
 
