@@ -25,7 +25,7 @@ void Texture::LoadTexture() {
     unsigned char *texData = stbi_load(fileLocation, &width, &height, &bitDepth, 0); // one char = 1 byte; So this is like having a byte array or an array of bytes, that we use to represent data. Common for image array
     
     if(!texData) {
-        printf("Failed to find: %s\n", fileLocation, stbi_failure_reason());
+        printf("Failed to find: %s\n", fileLocation);
         return;
     }
 
