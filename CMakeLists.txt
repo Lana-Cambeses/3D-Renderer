@@ -25,6 +25,7 @@ add_executable(3D-RENDERER
     renderer/Camera.cpp
     renderer/Texture.cpp
     renderer/Light.cpp
+    renderer/Material.cpp
 )
 
 # Link libraries
