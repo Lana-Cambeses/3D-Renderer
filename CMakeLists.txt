@@ -28,6 +28,7 @@ add_executable(3D-RENDERER
     renderer/Material.cpp
     renderer/DirectionalLight.cpp
     renderer/PointLight.cpp
+    renderer/SpotLight.cpp
 )
 
 # Link libraries
