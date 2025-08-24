@@ -139,9 +139,9 @@ int WINAPI WinMain(HINSTANCE hInstance, HINSTANCE hPrevInstance, LPSTR lpCmdLine
     camera = Camera(glm::vec3(0.0f, 0.0f, 0.0f), glm::vec3(0.0f, 1.0f, 0.0f), -90.0f, 0.0f, 5.0f, 0.5f);
 
     brickTexture = Texture("renderer/assets/Brick.png");
-    brickTexture.LoadTexture();
+    brickTexture.LoadTextureA();
     dirtTexture = Texture("renderer/assets/Soil.png");
-    dirtTexture.LoadTexture();
+    dirtTexture.LoadTextureA();
 
     shinyMaterial = Material(1.0f, 32);
     dullMaterial = Material(0.3f, 4);

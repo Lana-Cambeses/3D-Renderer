@@ -9,6 +9,7 @@ find_package(SDL2 REQUIRED)
 find_package(GLEW REQUIRED)
 find_package(OpenGL REQUIRED)
 find_package(glfw3 REQUIRED)
+find_package(assimp REQUIRED)
 
 # Always use the Windows subsystem and force the entry point to mainCRTStartup
 set(CMAKE_EXE_LINKER_FLAGS "${CMAKE_EXE_LINKER_FLAGS} -Wl,--subsystem,windows -Wl,--entry,mainCRTStartup")
@@ -29,6 +30,7 @@ add_executable(3D-RENDERER
     renderer/DirectionalLight.cpp
     renderer/PointLight.cpp
     renderer/SpotLight.cpp
+    renderer/Model.cpp
 )
 
 # Link libraries
@@ -38,6 +40,7 @@ target_link_libraries(3D-RENDERER
     GLEW::GLEW 
     OpenGL::GL
     glfw
+    assimp::assimp
     -static-libgcc
     -static-libstdc++
 )
