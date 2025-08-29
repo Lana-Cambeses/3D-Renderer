@@ -1,7 +1,7 @@
 #!/bin/bash
 
-SRC="course-learning/learning.cpp"
-OUT="course-learning/learning.exe"
+SRC="cpp-course/learning.cpp"
+OUT="cpp-course/learning.exe"
 
 echo "Compiling $SRC..."
 g++ "$SRC" -o "$OUT"

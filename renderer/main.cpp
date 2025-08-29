@@ -26,6 +26,8 @@
 #include "SpotLight.h"
 #include "Material.h"
 
+#include "Model.h"
+
 const float toRadians = 3.14159265f / 180.0f;
 
 Window mainWindow;
@@ -35,9 +37,13 @@ Camera camera;
 
 Texture brickTexture;
 Texture dirtTexture;
+Texture plainTexture;
 
 Material shinyMaterial;
 Material dullMaterial;
+
+Model xwing;
+Model blackhawk;
 
 DirectionalLight mainLight;
 PointLight pointLights[MAX_POINT_LIGHTS];
@@ -142,9 +148,15 @@ int WINAPI WinMain(HINSTANCE hInstance, HINSTANCE hPrevInstance, LPSTR lpCmdLine
     brickTexture.LoadTextureA();
     dirtTexture = Texture("renderer/assets/Soil.png");
     dirtTexture.LoadTextureA();
+    //plainTexture = Texture("renderer/assets/Tile.png");
+    //plainTexture.LoadTextureA();
 
     shinyMaterial = Material(1.0f, 32);
     dullMaterial = Material(0.3f, 4);
+
+    //xwing = Model();
+    //xwing.LoadModel("renderer/models/xwing.obj");
+
 
     mainLight = DirectionalLight(1.0f, 1.0f, 1.0f, 0.1f, 0.1f, 0.0f, 0.0f, -1.0f);
 
