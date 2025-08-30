@@ -54,9 +54,9 @@ Track:
 - [X] Drawing a triangle
 - [X] Shaders: Vertex and Fragment
 - [X] VBOs, VAOs, EBOs //Vertex Buffer Objects (defines the actual values) and Vertex Array Objects (defines the parameters)
-- [ ] Model loading with Assimp
+- [X] Model loading with Assimp
 - [X] Camera system
-- [ ] Lighting (Phong shading, etc.)
+- [X] Lighting (Phong shading, etc.)
 
 ![alt text](image.png) //temp
 
@@ -87,6 +87,9 @@ Section 3:
   + research
   - 1 VIDEO
 Section 4:
+  - 1 VIDEO
+  - 1 VIDEO
+  - 1 VIDEO
   - 1 VIDEO
   - 1 VIDEO
   - 1 VIDEO
